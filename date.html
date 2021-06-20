@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+		  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+	<title></title>
+</head>
+<style type="text/css">
+body{
+	background: #eff0f4;
+}
+	#time{
+		align-items: center;
+		font-size: 130px;
+		color: #eff0f4;
+		text-shadow: 3px 3px 3px #B5B5B5,-3px -3px 2px #FFFFFF;
+	}
+	.container{
+		display: flex;
+		justify-content: center;
+		align-items: center;
+			flex-direction: column;
+			height: 100vh;
+
+		
+	}
+	#alaram{
+		margin-top: 20px;
+		width: 200px;
+		text-align: center;
+		font-size: 30px;
+		height: 50px;
+		line-height: 50px;
+		box-shadow: 3px 3px 3px #C2C2C2,-3px -3px 3px #f8f8f8;
+		border-radius: 10px;
+		cursor: pointer;
+		color: #6A6A6A;
+
+	}
+	#alaram:hover{
+		box-shadow:inset 3px 3px 3px #C2C2C2 , inset -3px -3px 3px #f8f8f8;
+		color: pink;
+	}
+
+/*RESPONSIVE*/
+	@media (max-width:900px){
+			#time{font-size: 150px;}
+	}
+	@media (max-width:700px){
+			#time{font-size: 130px;}
+			#alaram{
+			width: 180px;
+			font-size: 25px;
+			height: 40px;
+			line-height: 40px;}
+	}
+	@media (max-width:610px){
+			#time{font-size: 110px;}
+			#alaram{
+			width: 180px;
+			font-size: 25px;
+			height: 40px;
+			line-height: 40px;}
+	}
+	@media (max-width:520px){
+			#time{font-size: 100px;}
+			#alaram{
+			width: 150px;
+			font-size: 20px;
+			height: 35px;
+			line-height: 35px;}
+	}
+	@media (max-width:472px){
+			#time{font-size: 90px;}
+			#alaram{
+			width: 140px;
+			font-size: 17px;
+			height: 35px;
+			line-height: 35px;}
+	}
+	@media (max-width:428px){
+			#time{font-size: 80px;}
+			#alaram{
+			width: 130px;
+			font-size: 15px;
+			height: 30px;
+			line-height: 30px;}
+	}
+	@media (max-width:381px){
+			#time{font-size: 70px;}
+			#alaram{
+			width: 110px;
+			font-size: 15px;
+			height: 30px;
+			line-height: 30px;}
+	}
+	@media (max-width:336px){
+			#time{font-size: 65px;}
+			#alaram{
+			width: 90px;
+			font-size: 15px;
+			height: 30px;
+			line-height: 30px;}
+	}
+	@media (max-width:313px){
+			#time{font-size: 60px;}
+			#alaram{
+			width: 110px;
+			font-size: 13px;
+			height: 25px;
+			line-height: 25px;}
+	}
+	@media (max-width:313px){
+			#time{font-size: 55px;}
+			#alaram{
+			width: 110px;
+			font-size: 13px;
+			height: 25px;
+			line-height: 25px;}
+	}
+</style>
+<body>
+		<div class="container">
+			
+	
+
+	<div id="time"></div>
+	<div id="alaram">Set Alaram</div>
+		</div>
+	<script type="text/javascript">
+		
+		setInterval(data, 1000);
+let hour=null;
+let menute=null;
+let second=null;
+		function data () {
+	
+const time=new Date();
+		const year=time.getFullYear();
+
+		const seconds=time.getSeconds()
+		const menutes=time.getMinutes()
+		const hours=time.getHours()
+    document.getElementById('time').innerHTML=`${hours} : ${menutes} : ${seconds}`;
+
+
+  if (hours==hour && menutes==menute && seconds==second) {
+    	alert("Bangoon")
+
+    }
+
+    
+		}
+		
+			// ALARAM
+
+			const alaram=document.getElementById('alaram');
+	alaram.addEventListener("click",()=>{
+
+		hour=prompt('Set Hour 1-24')
+		menute=prompt('Set Menute 1-60')
+		second=prompt('Set Second 1-60')
+	
+
+	})
+
+  
+	
+		
+// function date(){
+// 	const time=new Date();
+// 	const seconds=time.getSeconds();
+// 	setInterval(function(){
+// 		document.write(seconds)
+// 	},1000)
+
+// }
+// date()
+
+
+
+
+
+
+
+	</script>
+
+</body>
+</html>
